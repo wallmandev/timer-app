@@ -1,0 +1,66 @@
+.menu-overlay {
+    background-color: rgba(0, 0, 0, 0.95);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0; // Håll den fast vid högerkanten
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; // Döljer innehåll när bredden är 0
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        flex-direction: column;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        list-style: none;
+        text-align: center;
+
+        &-item {
+            font-size: 1.5rem;
+            transition: all 0.2s;
+
+            &:hover {
+                scale: 1.2;
+            }
+        }
+
+        &-link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s;
+
+            &:hover {
+                color: #838383;
+            }
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 1.5rem;
+        left: 2rem;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+            scale: 1.5;
+            color: red;
+        }
+    }
+}
+

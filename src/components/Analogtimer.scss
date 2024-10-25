@@ -1,0 +1,182 @@
+.analogtimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-menu {
+    border: 0;
+    position: relative;
+    left: -40%;
+    top: -10rem;
+
+    &__item {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-inner {
+    width: 450px; /* Justera till rätt bredd */
+    height: 100vh;
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Viktigt för att menyn ska positioneras relativt denna container */
+  }
+
+  &-overlay {
+    background-color: rgba(0, 0, 0, 0.95);
+    height: 100%;
+    width: 0; /* Startar med 0 bredd */
+    position: absolute; /* Positioneras relativt .analogtimer-inner */
+    top: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: width 0.5s ease-in-out; /* Animerad breddökning */
+
+    &.show {
+      width: 450px; /* När overlay visas, blir den 450px bred */
+    }
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-direction: column;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      list-style: none;
+      text-align: center;
+
+      &-item {
+        font-size: 1.5rem;
+        transition: all 0.2s;
+
+        &:hover {
+          scale: 1.2;
+        }
+      }
+
+      &-link {
+        color: white;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #838383;
+        }
+      }
+    }
+
+    &__close {
+      position: absolute;
+      top: 1.5rem;
+      left: 2rem;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        scale: 1.5;
+        color: red;
+      }
+    }
+  }
+
+  &-button {
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 1rem 4rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: all 0.2s;
+    position: absolute;
+    bottom: 3rem;
+
+    &:hover {
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.analogtimer-clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hand {
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: black;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(0deg);
+  transition: none; // Ingen transition för omedelbar rotation
+}
+
+.second-hand {
+  height: 1px;
+  background-color: red;
+}
+
+.minute-hand {
+  height: 4px;
+}
+
+.center-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mark {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background-color: black;
+  top: 47%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: rotate(0deg) translateY(-140px);
+}
+
+.mark:first-child {
+  height: 15px;
+  top: 46.5%;
+  left: 50%;
+}

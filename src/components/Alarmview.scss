@@ -1,0 +1,72 @@
+.alarmview{
+    background-color: #222222;
+    height: 100vh;
+    width: 100%;
+    gap: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    &-bell{
+        width: 450px;
+
+    }
+
+    &-bellimage{
+        z-index:999;
+    }
+
+    &-content{
+        font-size: 2rem;
+        color: #EEEEEE;
+        letter-spacing: 6px;
+        position: absolute;
+        bottom: 12rem;
+        right: 39rem;
+    }
+
+    &-button{
+        background-color: transparent;
+        font-size: 1rem;
+        padding: 1rem 4rem;
+        border: 1px solid #EEEEEE;
+        border-radius: 5px;
+        color: #EEEEEE;
+        transition: all 0.2s;
+        position: absolute;
+        bottom: 3rem;
+
+        &:hover{
+            background-color: red;
+            color: white;
+            border-color: black;
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+}
+
+.bell-background-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full höjd så att det täcker hela skärmen */
+    overflow: hidden; /* Se till att cirklarna inte går utanför container */
+}
+
+.circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #FFFFFF; /* Justera färg och transparens */
+    opacity: 3%;
+    z-index: 0; /* Se till att cirklarna är bakom klockan */
+}
+
+.bell {
+    width: 100px; /* Ställ in storleken på klockan */
+    z-index: 1; /* Se till att klockan är framför cirklarna */
+}

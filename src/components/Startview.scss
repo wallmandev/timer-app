@@ -1,0 +1,25 @@
+/* CSS för att sätta upp startvyn */
+.startview {
+    height: 100vh; /* Full höjd på sidan */
+    width: 100vw; /* Full bredd */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black; /* Sätt bakgrunden till svart */
+}
+
+.startview-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.startview-logo {
+    width: 200px; /* Du kan justera storleken på loggan */
+}
+
+.startview-text{
+    color: white;
+}
